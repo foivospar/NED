@@ -31,7 +31,7 @@ conda activate NED
 2. Fill out the [form](https://docs.google.com/forms/d/e/1FAIpQLScyyNWoFvyaxxfyaPLnCIAxXgdxLEMwR9Sayjh3JpWseuYlOA/viewform) to get access to the [FSGAN](https://github.com/YuvalNirkin/fsgan)'s pretrained models. Then download 'lfw_figaro_unet_256_2_0_segmentation_v1.pth' (from the "v1" folder) and place it under "./preprocessing/segmentation".
 
 ## Video preprocessing
-To train or test the method on a specific subject, first create a folder for this subject and place the video(s) of this subject into a **"videos"** subfolder. To acquire the training/test videos used in our experiments, please [contact us](mailto:phoebus1998p@gmail.com)
+To train or test the method on a specific subject, first create a folder for this subject and place the video(s) of this subject into a **"videos"** subfolder. To acquire the training/test videos used in our experiments, please [contact us](mailto:phoebus1998p@gmail.com).
 
 For example, for testing the method on Tarantino's clip, a structure similar to the following must be created:
 ```
