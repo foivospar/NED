@@ -4,20 +4,17 @@
 Example video of facial emotion manipulation while retaining the original mouth motion, i.e. speech. We show examples of 3 basic emotions.
 
 <br><br>
-This repository contains our anonymized source code for the paper:
+This repository contains the source code for our paper:
 > **Neural Emotion Director: Speech-preserving semantic control of facial expressions in “in-the-wild” videos**<br>
 > <br>
 > <p style='text-align: justify;'>
 > **Abstract:** *In this paper, we introduce a novel deep learning method for photo-realistic manipulation of the emotional state of actors in ``in-the-wild'' videos. The proposed method is based on a parametric 3D face representation of the actor in the input scene that offers a reliable disentanglement of the facial identity from the head pose and facial expressions. It then uses a novel deep domain translation framework that alters the facial expressions in a consistent and plausible manner, taking into account their dynamics. Finally, the altered facial expressions are used to photo-realistically manipulate the facial region in the input scene based on an especially-designed neural face renderer. To the best of our knowledge, our method is the first to be capable of controlling the actor’s facial expressions by even using as a sole input the semantic labels of the manipulated emotions, while at the same time preserving the speech-related lip movements. We conduct extensive qualitative and quantitative evaluations and comparisons, which demonstrate the effectiveness of our approach and the especially promising results that we obtain. Our method opens a plethora of new possibilities for useful applications of neural rendering technologies, ranging from movie post-production and video games to photo-realistic affective avatars.*
 > </p>
 
-**Note:** All the Google Drive links to our pretrained models are fully anonymized.
-
-
 ## Getting Started
 Clone the repo:
   ```bash
-  git clone https://github.com/anonymousNED/NED
+  git clone https://github.com/foivospar/NED
   cd NED
   ```  
 
@@ -36,7 +33,7 @@ conda activate NED
 2. Fill out the [form](https://docs.google.com/forms/d/e/1FAIpQLScyyNWoFvyaxxfyaPLnCIAxXgdxLEMwR9Sayjh3JpWseuYlOA/viewform) to get access to the [FSGAN](https://github.com/YuvalNirkin/fsgan)'s pretrained models. Then download 'lfw_figaro_unet_256_2_0_segmentation_v1.pth' (from the "v1" folder) and place it under "./preprocessing/segmentation".
 
 ## Video preprocessing
-To train or test the method on a specific subject, first create a folder for this subject and place the video(s) of this subject into a **"videos"** subfolder. The training videos for the 6 Youtube actors used in our experiments can be downloaded from [here](https://drive.google.com/drive/folders/1sH3r0XIwLrLYSCpxu6zqqtE2v7MAXHVa?usp=sharing), while the test videos for the same actors are available [here](https://drive.google.com/drive/folders/1OyMePR3jitM4qYArmJ04xTPtraGHMU_T?usp=sharing).
+To train or test the method on a specific subject, first create a folder for this subject and place the video(s) of this subject into a **"videos"** subfolder. To acquire the training/test videos used in our experiments, please [contact Us](mailto:phoebus1998p@gmail.com)
 
 For example, for testing the method on Tarantino's clip, a structure similar to the following must be created:
 ```
@@ -90,9 +87,9 @@ After successfull execution, the following structure will be created:
                    --- shapes_aligned (same as above, but aligned)
 ```
 ## 1.Manipulate the emotion on a test video
-Download our pretrained manipulator from [here](https://drive.google.com/drive/folders/1fLAsB2msBcLnRJWlixXt-hJ8FeX3Az6T?usp=sharing) and unzip the checkpoint. We currently provide only the test scripts for the manipulator, since training would require acquiring the large-size files of the 3D-reconstructed MEAD and Aff-wild2 databases.
+Download our pretrained manipulator from [here](https://drive.google.com/drive/folders/1fLAsB2msBcLnRJWlixXt-hJ8FeX3Az6T?usp=sharing) and unzip the checkpoint. We currently provide only the test scripts for the manipulator.
 
-Also, download and preprocess the test video for one of our target Youtube actors (or use a new actor, requires training a new neural face renderer).
+Also, preprocess the test video for one of our target Youtube actors or use a new actor (requires training a new neural face renderer).
 
 For our Youtube actors, we provide pretrained renderer models [here](https://drive.google.com/drive/folders/1vBVeiBvVP_fZ5jPSv7yd7OsdiI22Mwnd?usp=sharing). Download the .zip file for the desired actor and unzip it.
 
