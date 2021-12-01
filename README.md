@@ -145,6 +145,14 @@ python renderer/train.py --celeb <celeb_path> --checkpoints_dir <checkpoints_dir
 ## 3.Preprocess a reference video
 If you want to use a reference clip (e.g. from a movie) of another actor to transfer his/her speaking style to your test actor, simply preprocess the reference actor's clip as described above (mode=*reference*) and follow the instructions on **Reference-driven manipulation**.
 
+## Citation
+
+If you use this code, please cite our NED paper.
+
+```
+
+```
+
 ## Acknowledgements
 We would like to thank the following great repositories that our code borrows from:
 - [Head2Head](https://github.com/michaildoukas/head2head)
