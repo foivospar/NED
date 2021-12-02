@@ -150,7 +150,14 @@ If you want to use a reference clip (e.g. from a movie) of another actor to tran
 If you use this code, please cite our NED paper.
 
 ```
-
+@misc{paraperas2021neural,
+      title={Neural Emotion Director: Speech-preserving semantic control of facial expressions in "in-the-wild" videos}, 
+      author={Foivos Paraperas Papantoniou and Panagiotis P. Filntisis and Petros Maragos and Anastasios Roussos},
+      year={2021},
+      eprint={2112.00585},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
 ```
 
 ## Acknowledgements
