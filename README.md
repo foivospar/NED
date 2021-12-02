@@ -151,7 +151,8 @@ If you want to use a reference clip (e.g. from a movie) of another actor to tran
 
 ## Citation
 
-If you use this code, please cite our NED paper.
+
+If you find this work useful for your research, please cite our paper. 
 
 ```
 @misc{paraperas2021neural,
