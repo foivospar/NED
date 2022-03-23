@@ -66,7 +66,7 @@ After successfull execution, the following structure will be created:
                    |
                    --- full_frames (original frames of the video, created only if mode=test or mode=reference)
                    |
-                   --- eye_landmarks (created only if mode=train or mode=test)
+                   --- eye_landmarks (landmarks for left and right eye, created only if mode=train or mode=test)
                    |
                    --- eye_landmarks_aligned (same as above, but aligned)
                    |
