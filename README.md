@@ -1,6 +1,6 @@
 ## Neural Emotion Director (NED) - Official Pytorch Implementation (CVPR 2022)
 
-### Accepted to CVPR 2022
+### CVPR 2022 Oral (accepted)
 
 <img src="imgs/teaser.gif" width="100%" height="100%"/>
 Example video of facial emotion manipulation while retaining the original mouth motion, i.e. speech. We show examples of 3 basic emotions.
