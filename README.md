@@ -157,11 +157,11 @@ If you want to use a reference clip (e.g. from a movie) of another actor to tran
 If you find this work useful for your research, please cite our paper. 
 
 ```
-@article{paraperas2021neural,
+@inproceedings{paraperas2022ned,
          title={Neural Emotion Director: Speech-preserving semantic control of facial expressions in "in-the-wild" videos}, 
          author={Paraperas Papantoniou, Foivos and Filntisis, Panagiotis P. and Maragos, Petros and Roussos, Anastasios},
-         journal={arXiv preprint arXiv:2112.00585},
-         year={2021}
+         booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+         year={2022}
 }
 ```
 
