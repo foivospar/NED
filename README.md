@@ -98,6 +98,7 @@ For our YouTube actors, we provide pretrained renderer models [here](https://dri
 Then, assuming that preprocessing (in **test** mode) has been performed for the selected test video (see above), you can manipulate the expressions of the celebrity in this video by one of the following 2 ways:
 
 ##### 1.Label-driven manipulation
+<img src="imgs/examples_labels.png" width="100%" height="100%"/>
 Select one of the 7 basic emotions (happy, angry, surprised, neutral, fear, sad, disgusted) and run :
 ```bash
 python manipulator/test.py --celeb <celeb_path> --checkpoints_dir ./manipulator_checkpoints --trg_emotions <emotions> --exp_name <exp_name>
@@ -107,6 +108,7 @@ python manipulator/test.py --celeb <celeb_path> --checkpoints_dir ./manipulator_
 - ```<exp_name>``` is the name of the sub-folder that will be created under the <celeb_path> for storing the results.
 
 ##### 2.Reference-driven manipulation
+<img src="imgs/examples_ref.png" width="100%" height="100%"/>
 In this case, the reference video should first be preprocessed (see above) in **reference** mode. Then run:
 ```bash
 python manipulator/test.py --celeb <celeb_path> --checkpoints_dir ./manipulator_checkpoints --ref_dirs <ref_dirs> --exp_name <exp_name>
