@@ -113,7 +113,7 @@ python manipulator/test.py --celeb <celeb_path> --checkpoints_dir ./manipulator_
 
 <img src="imgs/examples_ref.png" width="100%" height="100%"/>
 
-In this case, the reference video should first be preprocessed (see above) in **reference** mode. Then run:
+In this case, the reference video should first be preprocessed (as described above) in **reference** mode. Then run:
 ```bash
 python manipulator/test.py --celeb <celeb_path> --checkpoints_dir ./manipulator_checkpoints --ref_dirs <ref_dirs> --exp_name <exp_name>
 ```
