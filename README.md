@@ -99,7 +99,7 @@ Then, assuming that preprocessing (in **test** mode) has been performed for the 
 
 ##### 1.Label-driven manipulation
 
-<img align="center" src="imgs/examples_labels.png" width="100%" height="100%"/>
+<img align="center" src="imgs/examples_labels.png" width="70%" height="70%"/>
 
 Select one of the 7 basic emotions (happy, angry, surprised, neutral, fear, sad, disgusted) and run :
 ```bash
@@ -107,10 +107,12 @@ python manipulator/test.py --celeb <celeb_path> --checkpoints_dir ./manipulator_
 ```
 - ```<celeb_path>``` is the path to the folder used for this actor's test footage (e.g. "./Tarantino").
 - ```<emotions>``` is one or more of the 7 emotions. If one emotion is given, e.g. ```--trg_emotions happy```, all the video will be converted to happy, whereas for 2 emotions or more, such as ```--trg_emotions happy angry``` the first half of the video will be happy, the second half angry and so on.
-- ```<exp_name>``` is the name of the sub-folder that will be created under the <celeb_path> for storing the results.
+- ```<exp_name>``` is the name of the sub-folder that will be created under the ```<celeb_path>``` for storing the results.
 
 ##### 2.Reference-driven manipulation
-<img src="imgs/examples_ref.png" width="70%" height="70%"/>
+
+<img align="center" src="imgs/examples_ref.png" width="70%" height="70%"/>
+
 In this case, the reference video should first be preprocessed (see above) in **reference** mode. Then run:
 ```bash
 python manipulator/test.py --celeb <celeb_path> --checkpoints_dir ./manipulator_checkpoints --ref_dirs <ref_dirs> --exp_name <exp_name>
