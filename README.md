@@ -99,7 +99,7 @@ Then, assuming that preprocessing (in **test** mode) has been performed for the 
 
 ##### 1.Label-driven manipulation
 
-<img align="center" src="imgs/examples_labels.png" width="70%" height="70%"/>
+<img src="imgs/examples_labels.png" width="100%" height="100%"/>
 
 Select one of the 7 basic emotions (happy, angry, surprised, neutral, fear, sad, disgusted) and run :
 ```bash
@@ -111,7 +111,7 @@ python manipulator/test.py --celeb <celeb_path> --checkpoints_dir ./manipulator_
 
 ##### 2.Reference-driven manipulation
 
-<img align="center" src="imgs/examples_ref.png" width="70%" height="70%"/>
+<img src="imgs/examples_ref.png" width="100%" height="100%"/>
 
 In this case, the reference video should first be preprocessed (see above) in **reference** mode. Then run:
 ```bash
