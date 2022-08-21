@@ -108,7 +108,7 @@ python manipulator/test.py --celeb <celeb_path> --checkpoints_dir ./manipulator_
 - ```<exp_name>``` is the name of the sub-folder that will be created under the <celeb_path> for storing the results.
 
 ##### 2.Reference-driven manipulation
-<img src="imgs/examples_ref.png" width="100%" height="100%"/>
+<img src="imgs/examples_ref.png" width="70%" height="70%"/>
 In this case, the reference video should first be preprocessed (see above) in **reference** mode. Then run:
 ```bash
 python manipulator/test.py --celeb <celeb_path> --checkpoints_dir ./manipulator_checkpoints --ref_dirs <ref_dirs> --exp_name <exp_name>
