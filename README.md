@@ -98,7 +98,9 @@ For our YouTube actors, we provide pretrained renderer models [here](https://dri
 Then, assuming that preprocessing (in **test** mode) has been performed for the selected test video (see above), you can manipulate the expressions of the celebrity in this video by one of the following 2 ways:
 
 ##### 1.Label-driven manipulation
-<img src="imgs/examples_labels.png" width="100%" height="100%"/>
+
+<img align="center" src="imgs/examples_labels.png" width="100%" height="100%"/>
+
 Select one of the 7 basic emotions (happy, angry, surprised, neutral, fear, sad, disgusted) and run :
 ```bash
 python manipulator/test.py --celeb <celeb_path> --checkpoints_dir ./manipulator_checkpoints --trg_emotions <emotions> --exp_name <exp_name>
