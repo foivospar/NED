@@ -43,7 +43,7 @@ Tarantino ----- videos ----- Tarantino_t.mp4
 ```
 Under the above structure, there are 3 options for the video(s) placed in the "videos" subfolder:
 1. Use it as test footage for this actor and apply our method for manipulating his/her emotion.
-2. Use this footage to train a neural face renderer on the actor (e.g. use the training video one of our 6 YouTube actors, or a footage of similar duration for a new identity).
+2. Use this footage to train a neural face renderer on the actor (e.g. use the training video of one of our 6 YouTube actors, or a footage of similar duration for a new identity).
 3. Use it only as reference clip for transferring the expressive style of the actor to another subject.
 
 To preprocess the video (face detection, segmentation, landmark detection, 3D reconstruction, alignment) run:
