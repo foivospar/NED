@@ -103,7 +103,7 @@ Select one of the 7 basic emotions (happy, angry, surprised, neutral, fear, sad,
 python manipulator/test.py --celeb <celeb_path> --checkpoints_dir ./manipulator_checkpoints --trg_emotions <emotions> --exp_name <exp_name>
 ```
 - ```<celeb_path>``` is the path to the folder used for this actor's test footage (e.g. "./Tarantino").
-- ```<emotions>``` is one or more of the 7 emotions. If one emotion is given, e.g. ```--trg_emotions happy```, all the video will be converted to happy, whereas for 2 or more emotions, such as ```--trg_emotions happy angry``` the first half of the video will be happy, the second half angry and so on.
+- ```<emotions>``` is one or more of the 7 emotions. If one emotion is given, e.g. ```--trg_emotions happy```, all the video will be converted to happy, whereas for 2 emotions or more, such as ```--trg_emotions happy angry``` the first half of the video will be happy, the second half angry and so on.
 - ```<exp_name>``` is the name of the sub-folder that will be created under the <celeb_path> for storing the results.
 
 ##### 2.Reference-driven manipulation
