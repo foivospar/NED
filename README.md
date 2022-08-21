@@ -132,7 +132,7 @@ python postprocessing/images2video.py --imgs_path <full_frames_path> --out_path 
 ```
 - ```<full_frames_path>``` is the path to the full frames (e.g. "./Tarantino/happy/full_frames").
 - ```<out_path>``` is the path for saving the video (e.g. "./Tarantino_happy.mp4").
-- ```<original_video_path>``` is the path to the original video (e.g. "./Tarantino/videos/tarantino_t.mp4"). This argment is optional and is used to add the original audio to the generated video.
+- ```<original_video_path>``` is the path to the original video (e.g. "./Tarantino/videos/tarantino_t.mp4"). This argument is optional and is used to add the original audio to the generated video.
 
 
 ## 2.Train a neural face renderer for a new celebrity
