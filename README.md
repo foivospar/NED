@@ -160,6 +160,33 @@ You may also want to change the following parameters according to your needs:
 ## 3.Preprocess a reference video
 If you want to use a reference clip (e.g. from a movie) of another actor to transfer his/her speaking style to your test actor, simply preprocess the reference actor's clip as described above (mode=*reference*) and follow the instructions on **Reference-driven manipulation**.
 
+## (Optional) Train the Emotion Manipulator
+Here, we provide instructions on how to train the Emotion Manipulator on the [MEAD](https://wywu.github.io/projects/MEAD/MEAD.html) database, in case you want to experiment with the training process of this module (**note that, in contrast to the neural face renderers, the provided trained manipulator is person-agnostic and can be used as it is for new subjects**).
+
+#### Prepare dataset
+For the training, we use a subset of the MEAD database (e.g. 4 actors). Let's say you pick the following actors: M003, M009, W029, and M023. First, you should create a folder named 'MEAD_data' with subfolders named 'M003', 'M009' etc. Then, follow the download link in [MEAD](https://wywu.github.io/projects/MEAD/MEAD.html), get the 'video.tar' for each of the selected actors, place them inside the subfolders you created and extract them. Your structure should look like this:
+```
+MEAD_data ----- M003 ----- video ----- ...
+                  |        
+                  |      
+                  |
+                M009 ----- video ----- ...
+                  |        
+                  |      
+                  |
+                W029 ----- video ----- ...
+                  |        
+                  |      
+                  |
+                M023 ----- video ----- ...             
+```
+Then, run:
+```bash
+python preprocessing/reconstruct_MEAD.py --root ./MEAD_data --actors M003 M009 W029 M023
+```
+This step will perform 3D reconstruction on the videos of the selected actors. The predicted expression parameters will be stored in the corresponding '{actor}_deca.pkl' files inside 'MEAD_data/'.
+
+
 ## Citation
 
 
