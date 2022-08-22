@@ -150,7 +150,7 @@ python renderer/train.py --celeb <celeb_path> --checkpoints_dir <checkpoints_dir
 ```
 - ```<celeb_path>``` is the path to the train folder used for the new actor.
 - ```<checkpoints_dir>``` is the new path where the checkpoints will be saved.
-- ```<load_pretrain>``` is the path with the checkpoints of the pretrained meta-renderer (e.g. "./checkpoints_meta-renderer")
+- ```<load_pretrain>``` is the path with the checkpoints of the pretrained meta-renderer (e.g. "./checkpoints_meta-renderer").
 
 If you omit the ```--load_pretrain``` and ```--which_epoch``` arguments, the renderer will be trained from scratch. Note that in this case you should increase the training epochs (e.g. ```--niter 60```).
 
