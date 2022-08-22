@@ -152,6 +152,8 @@ python renderer/train.py --celeb <celeb_path> --checkpoints_dir <checkpoints_dir
 - ```<checkpoints_dir>``` is the new path where the checkpoints will be saved.
 - ```<load_pretrain>``` is the path with the checkpoints of the pretrained meta-renderer (e.g. "./checkpoints_meta-renderer")
 
+If you omit the ```--load_pretrain``` and ```--which_epoch``` arguments, the renderer will be trained from scratch. Note that in this case you should increase the training epochs (e.g. ```--niter 60```).
+
 You may also want to change the following parameters according to your needs:
 
 - ```<gpu_ids>``` which can be used to train on multiple gpus (e.g. ```--gpu_ids 0,1,2``` to use the first 3 gpus of your machine, default is only gpu 0).
