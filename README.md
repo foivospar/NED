@@ -97,7 +97,7 @@ For our YouTube actors, we provide pretrained renderer models [here](https://dri
 
 Then, assuming that preprocessing (in **test** mode) has been performed for the selected test video (see above), you can manipulate the expressions of the celebrity in this video by one of the following 2 ways:
 
-##### 1.Label-driven manipulation
+#### 1.Label-driven manipulation
 
 <img src="imgs/examples_labels.png" width="100%" height="100%"/>
 
@@ -109,7 +109,7 @@ python manipulator/test.py --celeb <celeb_path> --checkpoints_dir ./manipulator_
 - ```<emotions>``` is one or more of the 7 emotions. If one emotion is given, e.g. ```--trg_emotions happy```, all the video will be converted to happy, whereas for 2 emotions or more, such as ```--trg_emotions happy angry``` the first half of the video will be happy, the second half angry and so on.
 - ```<exp_name>``` is the name of the sub-folder that will be created under the ```<celeb_path>``` for storing the results.
 
-##### 2.Reference-driven manipulation
+#### 2.Reference-driven manipulation
 
 <img src="imgs/examples_ref.png" width="100%" height="100%"/>
 
