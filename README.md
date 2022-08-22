@@ -222,6 +222,8 @@ python manipulator/train.py --train_root <train_root> --selected_actors <selecte
 - ```<selected_actors>``` and ```<selected_actors_val>``` are the MEAD actors whose videos will be used as training/validation data accordingly (e.g. ```--selected_actors M003 M009 W029``` to use the 3 actors for training and ```--selected_actors_val M023``` to use the remaining one for validation).
 - If you omit the ```--finetune``` argument, the Manipulator will be trained from scratch on MEAD, without using the checkpoint from Aff-Wild2.
 
+Checkpoints will be saved at the end of every epoch inside the ```<checkpoints_dir>```.
+
 Note: You can follow the optimization, by pointing Tensorboard to ```<checkpoints_dir>```.
 
 
