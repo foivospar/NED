@@ -95,7 +95,7 @@ Also, preprocess the test video for one of our target YouTube actors or use a ne
 
 For our YouTube actors, we provide pretrained renderer models [here](https://drive.google.com/drive/folders/1vBVeiBvVP_fZ5jPSv7yd7OsdiI22Mwnd?usp=sharing). Download the .zip file for the desired actor and unzip it.
 
-Then, assuming that preprocessing (in **test** mode) has been performed for the selected test video (see above), you can manipulate the expressions of the celebrity in this video by one of the following 2 ways:
+Then, assuming that preprocessing (in **test** mode) has been performed for the selected test video (see [above](#Video-preprocessing)), you can manipulate the expressions of the celebrity in this video by one of the following 2 ways:
 
 #### 1.Label-driven manipulation
 
@@ -185,6 +185,9 @@ Then, run:
 python preprocessing/reconstruct_MEAD.py --root ./MEAD_data --actors M003 M009 W029 M023
 ```
 This step will perform 3D reconstruction on the videos of the selected actors. The predicted expression parameters will be stored in the corresponding '{actor}_deca.pkl' files inside 'MEAD_data/'.
+
+#### Preprocess example videos for visualization
+In order to visualize the training progress using tensorboard, we use the Pacino's test video. The expressions from this video are manipulated at the end of every epoch according to the 7 basic emotions, as well as 3 short reference clips. 
 
 
 ## Citation
