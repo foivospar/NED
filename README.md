@@ -14,7 +14,7 @@ https://foivospar.github.io/NED/<br>
 > **Abstract:** *In this paper, we introduce a novel deep learning method for photo-realistic manipulation of the emotional state of actors in ``in-the-wild'' videos. The proposed method is based on a parametric 3D face representation of the actor in the input scene that offers a reliable disentanglement of the facial identity from the head pose and facial expressions. It then uses a novel deep domain translation framework that alters the facial expressions in a consistent and plausible manner, taking into account their dynamics. Finally, the altered facial expressions are used to photo-realistically manipulate the facial region in the input scene based on an especially-designed neural face renderer. To the best of our knowledge, our method is the first to be capable of controlling the actor’s facial expressions by even using as a sole input the semantic labels of the manipulated emotions, while at the same time preserving the speech-related lip movements. We conduct extensive qualitative and quantitative evaluations and comparisons, which demonstrate the effectiveness of our approach and the especially promising results that we obtain. Our method opens a plethora of new possibilities for useful applications of neural rendering technologies, ranging from movie post-production and video games to photo-realistic affective avatars.*
 
 ## Updates
-**22/08/2022:** We have added code and [instructions](#(optional)-train-the-emotion-manipulator) for training the Emotion Manipulator.
+**22/08/2022:** We have added code and [instructions](#optional-train-the-emotion-manipulator) for training the Emotion Manipulator.
 
 ## Getting Started
 Clone the repo:
@@ -98,7 +98,7 @@ Also, preprocess the test video for one of our target YouTube actors or use a ne
 
 For our YouTube actors, we provide pretrained renderer models [here](https://drive.google.com/drive/folders/1vBVeiBvVP_fZ5jPSv7yd7OsdiI22Mwnd?usp=sharing). Download the .zip file for the desired actor and unzip it.
 
-Then, assuming that preprocessing (in **test** mode) has been performed for the selected test video (see [above](#Video-preprocessing)), you can manipulate the expressions of the celebrity in this video by one of the following 2 ways:
+Then, assuming that preprocessing (in **test** mode) has been performed for the selected test video (see [above](#video-preprocessing)), you can manipulate the expressions of the celebrity in this video by one of the following 2 ways:
 
 #### 1.Label-driven manipulation
 
@@ -116,7 +116,7 @@ python manipulator/test.py --celeb <celeb_path> --checkpoints_dir ./manipulator_
 
 <img src="imgs/examples_ref.png" width="100%" height="100%"/>
 
-In this case, the reference video should first be preprocessed (as described [above](#Video-preprocessing)) in **reference** mode. Then run:
+In this case, the reference video should first be preprocessed (as described [above](#video-preprocessing)) in **reference** mode. Then run:
 ```bash
 python manipulator/test.py --celeb <celeb_path> --checkpoints_dir ./manipulator_checkpoints --ref_dirs <ref_dirs> --exp_name <exp_name>
 ```
@@ -147,7 +147,7 @@ python postprocessing/images2video.py --imgs_path <full_frames_path> --out_path 
 ## 2.Train a neural face renderer for a new celebrity
 Download our pretrained meta-renderer ("checkpoints_meta-renderer.zip") from the link above and unzip the checkpoints.
 
-Assuming that the training video of the new actor has been preprocessed (in **train** mode) as described [above](#Video-preprocessing), you can then finetune our meta-renderer on this actor by running:
+Assuming that the training video of the new actor has been preprocessed (in **train** mode) as described [above](#video-preprocessing), you can then finetune our meta-renderer on this actor by running:
 ```bash
 python renderer/train.py --celeb <celeb_path> --checkpoints_dir <checkpoints_dir> --load_pretrain <pretrain_checkpoints> --which_epoch 15
 ```
@@ -165,7 +165,7 @@ You may also want to change the following parameters according to your needs:
 Note: You can follow the optimization, by viewing 'web/index.html' inside ```<checkpoints_dir>```.
 
 ## 3.Preprocess a reference video
-If you want to use a reference clip (e.g. from a movie) of another actor to transfer his/her speaking style to your test actor, simply preprocess the reference actor's clip as described [above](#Video-preprocessing) (mode=*reference*) and follow the instructions on **Reference-driven manipulation**.
+If you want to use a reference clip (e.g. from a movie) of another actor to transfer his/her speaking style to your test actor, simply preprocess the reference actor's clip as described [above](#video-preprocessing) (mode=*reference*) and follow the instructions on **Reference-driven manipulation**.
 
 
 ## (Optional) Train the Emotion Manipulator
