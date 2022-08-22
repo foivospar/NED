@@ -160,6 +160,7 @@ You may also want to change the following parameters according to your needs:
 ## 3.Preprocess a reference video
 If you want to use a reference clip (e.g. from a movie) of another actor to transfer his/her speaking style to your test actor, simply preprocess the reference actor's clip as described [above](#Video-preprocessing) (mode=*reference*) and follow the instructions on **Reference-driven manipulation**.
 
+
 ## (Optional) Train the Emotion Manipulator
 Here, we provide instructions on how to train the Emotion Manipulator on the [MEAD](https://wywu.github.io/projects/MEAD/MEAD.html) database, in case you want to experiment with the training process of this module (**note that, in contrast to the neural face renderers, the provided trained manipulator is person-agnostic and can be used as it is for new subjects**).
 
@@ -218,9 +219,10 @@ Run:
 python manipulator/train.py --train_root <train_root> --selected_actors <selected_actors> --selected_actors_val <selected_actors_val> --checkpoints_dir ./manipulator_checkpoints_pretrained_affwild2/ --finetune
 ```
 - ```<train_root>``` is the path to the MEAD data (e.g. "./MEAD_data").
-- ```<selected_actors>``` and ```<selected_actors_val>``` are the MEAD actors whose videos will be used as training/validation data accordingly (e.g. ```--selected_actors M003 M009 W029``` to use the 3 actors for training and ```--selected_actors_val M023``` to use the remaining one for validation,).
+- ```<selected_actors>``` and ```<selected_actors_val>``` are the MEAD actors whose videos will be used as training/validation data accordingly (e.g. ```--selected_actors M003 M009 W029``` to use the 3 actors for training and ```--selected_actors_val M023``` to use the remaining one for validation).
+- If you omit the ```--finetune``` argument, the Manipulator will be trained from scratch on MEAD, without using the checkpoint from Aff-Wild2.
 
-
+Note: You can follow the optimization visually, by pointing Tensorboard to ```<checkpoints_dir>```.
 
 
 ## Citation
