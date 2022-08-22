@@ -187,7 +187,27 @@ python preprocessing/reconstruct_MEAD.py --root ./MEAD_data --actors M003 M009 W
 This step will perform 3D reconstruction on the videos of the selected actors. The predicted expression parameters will be stored in the corresponding '{actor}_deca.pkl' files inside 'MEAD_data/'.
 
 #### Preprocess example videos for visualization
-In order to visualize the training progress using tensorboard, we use the Pacino's test video. The expressions from this video are manipulated at the end of every epoch according to the 7 basic emotions, as well as 3 short reference clips. 
+In order to visualize the training progress using tensorboard, we use Pacino's test video. The expressions from this video are manipulated at the end of every epoch according to the 7 basic emotions, as well as 3 short reference clips. Therefore, you will need to acquire (see [here](#Video-preprocessing)) 'Pacino_t.mp4' from the test videos and the reference videos 'Nicholson_clip.mp4', 'Pacino_clip.mp4' and 'DeNiro_clip.mp4'. After downloading them, place them in the folders provided as you see here:
+```
+test_examples ----- Pacino ----- videos ----- Pacino_t.mp4
+
+reference_examples ----- Nicholson_clip ----- videos ----- Nicholson_clip.mp4
+                               |        
+                               |      
+                               |
+                            Pacino_clip ----- videos ----- Pacino_clip.mp4
+                               |        
+                               |      
+                               |
+                            DeNiro_clip ----- videos ----- DeNiro_clip.mp4       
+```
+Then, preprocess the videos:
+```
+./preprocess.sh text_examples/Pacino/ test
+./preprocess.sh reference_examples/Nicholson_clip/ reference
+./preprocess.sh reference_examples/Pacino_clip/ reference
+./preprocess.sh reference_examples/DeNiro_clip/ reference
+```
 
 
 ## Citation
