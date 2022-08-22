@@ -113,7 +113,7 @@ python manipulator/test.py --celeb <celeb_path> --checkpoints_dir ./manipulator_
 
 <img src="imgs/examples_ref.png" width="100%" height="100%"/>
 
-In this case, the reference video should first be preprocessed (as described above) in **reference** mode. Then run:
+In this case, the reference video should first be preprocessed (as described [above](#Video-preprocessing)) in **reference** mode. Then run:
 ```bash
 python manipulator/test.py --celeb <celeb_path> --checkpoints_dir ./manipulator_checkpoints --ref_dirs <ref_dirs> --exp_name <exp_name>
 ```
@@ -144,7 +144,7 @@ python postprocessing/images2video.py --imgs_path <full_frames_path> --out_path 
 ## 2.Train a neural face renderer for a new celebrity
 Download our pretrained meta-renderer ("checkpoints_meta-renderer.zip") from the link above and unzip the checkpoints.
 
-Assuming that the training video of the new actor has been preprocessed (in **train** mode) as described above, you can then finetune our meta-renderer on this actor by running:
+Assuming that the training video of the new actor has been preprocessed (in **train** mode) as described [above](#Video-preprocessing), you can then finetune our meta-renderer on this actor by running:
 ```bash
 python renderer/train.py --celeb <celeb_path> --checkpoints_dir <checkpoints_dir> --load_pretrain <pretrain_checkpoints> --which_epoch 15
 ```
@@ -158,7 +158,7 @@ You may also want to change the following parameters according to your needs:
 - ```<batch_size>``` which can be increased for faster training if you train on multiple gpus (default batch size is 1).
 
 ## 3.Preprocess a reference video
-If you want to use a reference clip (e.g. from a movie) of another actor to transfer his/her speaking style to your test actor, simply preprocess the reference actor's clip as described above (mode=*reference*) and follow the instructions on **Reference-driven manipulation**.
+If you want to use a reference clip (e.g. from a movie) of another actor to transfer his/her speaking style to your test actor, simply preprocess the reference actor's clip as described [above](#Video-preprocessing) (mode=*reference*) and follow the instructions on **Reference-driven manipulation**.
 
 ## (Optional) Train the Emotion Manipulator
 Here, we provide instructions on how to train the Emotion Manipulator on the [MEAD](https://wywu.github.io/projects/MEAD/MEAD.html) database, in case you want to experiment with the training process of this module (**note that, in contrast to the neural face renderers, the provided trained manipulator is person-agnostic and can be used as it is for new subjects**).
