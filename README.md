@@ -211,7 +211,7 @@ reference_examples ----- Nicholson_clip ----- videos ----- Nicholson_clip.mp4
 ```
 Then, preprocess the videos:
 ```bash
-./preprocess.sh text_examples/Pacino/ test
+./preprocess.sh test_examples/Pacino/ test
 ./preprocess.sh reference_examples/Nicholson_clip/ reference
 ./preprocess.sh reference_examples/Pacino_clip/ reference
 ./preprocess.sh reference_examples/DeNiro_clip/ reference
