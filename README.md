@@ -89,7 +89,7 @@ After successfull execution, the following structure will be created:
                    --- shapes_aligned (same as above, but aligned)
 ```
 ## 1.Manipulate the emotion on a test video
-Download our pretrained manipulator from [here](https://drive.google.com/drive/folders/1fLAsB2msBcLnRJWlixXt-hJ8FeX3Az6T?usp=sharing) and unzip the checkpoint. We currently provide only the test scripts for the manipulator.
+Download our pretrained manipulator from [here](https://drive.google.com/drive/folders/1fLAsB2msBcLnRJWlixXt-hJ8FeX3Az6T?usp=sharing) and unzip the checkpoint.
 
 Also, preprocess the test video for one of our target YouTube actors or use a new actor (requires training a new neural face renderer).
 
@@ -202,12 +202,25 @@ reference_examples ----- Nicholson_clip ----- videos ----- Nicholson_clip.mp4
                             DeNiro_clip ----- videos ----- DeNiro_clip.mp4       
 ```
 Then, preprocess the videos:
-```
+```bash
 ./preprocess.sh text_examples/Pacino/ test
 ./preprocess.sh reference_examples/Nicholson_clip/ reference
 ./preprocess.sh reference_examples/Pacino_clip/ reference
 ./preprocess.sh reference_examples/DeNiro_clip/ reference
 ```
+
+#### Download pre-trained checkpoint
+Since we have pre-trained our Emotion Manipulator on the Aff-Wild2 database, we also provide the pre-trained checkpoint [here](https://drive.google.com/drive/folders/1fUPYlwzpmSfC24jCOp46Gru9eY6upC1W?usp=sharing). Download the checkpoint and unzip it.
+
+#### Training
+Run:
+```bash
+python manipulator/train.py --train_root <train_root> --selected_actors <selected_actors> --selected_actors_val <selected_actors_val> --checkpoints_dir ./manipulator_checkpoints_pretrained_affwild2/ --finetune
+```
+- ```<train_root>``` is the path to the MEAD data (e.g. "./MEAD_data").
+- ```<selected_actors>``` and ```<selected_actors_val>``` are the MEAD actors whose videos will be used as training/validation data accordingly (e.g. ```--selected_actors M003 M009 W029``` to use the 3 actors for training and ```--selected_actors_val M023``` to use the remaining one for validation,).
+
+
 
 
 ## Citation
