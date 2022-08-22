@@ -165,7 +165,7 @@ You may also want to change the following parameters according to your needs:
 Note: You can follow the optimization, by viewing 'web/index.html' inside ```<checkpoints_dir>```.
 
 ## 3.Preprocess a reference video
-If you want to use a reference clip (e.g. from a movie) of another actor to transfer his/her speaking style to your test actor, simply preprocess the reference actor's clip as described [above](#video-preprocessing) (mode=*reference*) and follow the instructions on **Reference-driven manipulation**.
+If you want to use a reference clip (e.g. from a movie) of another actor to transfer his/her speaking style to your test actor, simply preprocess the reference actor's clip as described [above](#video-preprocessing) (mode=*reference*) and follow the instructions on [Reference-driven manipulation](#2reference-driven-manipulation).
 
 
 ## (Optional) Train the Emotion Manipulator
