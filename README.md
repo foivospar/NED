@@ -210,7 +210,7 @@ Then, preprocess the videos:
 ./preprocess.sh reference_examples/DeNiro_clip/ reference
 ```
 
-#### Download pre-trained checkpoint
+#### Download the pre-trained checkpoint
 Since we have pre-trained our Emotion Manipulator on the Aff-Wild2 database, we also provide the pre-trained checkpoint [here](https://drive.google.com/drive/folders/1fUPYlwzpmSfC24jCOp46Gru9eY6upC1W?usp=sharing). Download the checkpoint and unzip it.
 
 #### Training
