@@ -14,6 +14,7 @@ https://foivospar.github.io/NED/<br>
 > **Abstract:** *In this paper, we introduce a novel deep learning method for photo-realistic manipulation of the emotional state of actors in ``in-the-wild'' videos. The proposed method is based on a parametric 3D face representation of the actor in the input scene that offers a reliable disentanglement of the facial identity from the head pose and facial expressions. It then uses a novel deep domain translation framework that alters the facial expressions in a consistent and plausible manner, taking into account their dynamics. Finally, the altered facial expressions are used to photo-realistically manipulate the facial region in the input scene based on an especially-designed neural face renderer. To the best of our knowledge, our method is the first to be capable of controlling the actor’s facial expressions by even using as a sole input the semantic labels of the manipulated emotions, while at the same time preserving the speech-related lip movements. We conduct extensive qualitative and quantitative evaluations and comparisons, which demonstrate the effectiveness of our approach and the especially promising results that we obtain. Our method opens a plethora of new possibilities for useful applications of neural rendering technologies, ranging from movie post-production and video games to photo-realistic affective avatars.*
 
 ## Updates
+**6/10/2022:** A few more additions on the training of the Manipulator (using Aff-wild2), see [here](#training-on-aff-wild2).
 **22/08/2022:** We have added code and [instructions](#optional-train-the-emotion-manipulator) for the training of the Emotion Manipulator.
 
 ## Getting Started
@@ -220,7 +221,7 @@ Then, preprocess the videos:
 #### Download the pre-trained checkpoint
 Since we have pre-trained our Emotion Manipulator on the Aff-Wild2 database, we also provide the pre-trained checkpoint [here](https://drive.google.com/drive/folders/1fUPYlwzpmSfC24jCOp46Gru9eY6upC1W?usp=sharing). Download the checkpoint and unzip it.
 
-In case you want to repeat the pre-training on Aff-Wild2, see [below]
+In case you want to repeat the pre-training on Aff-Wild2, see [below](#training-on-aff-wild2).
 
 #### Training
 Run:
@@ -236,8 +237,64 @@ Checkpoints will be saved at the end of every epoch in ```<checkpoints_dir>```.
 Note: You can follow the optimization, by pointing Tensorboard to ```<checkpoints_dir>```.
 
 #### Training on Aff-Wild2
+Here we describe how to train the Manipulator on the Aff-Wild2 database, which was used as a pre-training step in the paper.
 
+First, see [here](https://ibug.doc.ic.ac.uk/resources/aff-wild2/) about how to acquire this database. We need only the expression set, i.e. the part with the categorical annotations (not Valence-Arousal or AUs). Once you gain access to the database, download and extract the videos and annotations for the expression set.
 
+Then, perform face detection in the videos of the train set (we don't use the val and test sets):
+```bash
+python preprocessing/detect_affwild2.py --videos_path /path/to/videos/of/the/train/set --annotations_path /path/to/annotations/of/the/train/set/ --save_dir <save_dir>
+```
+- ```<videos_path>``` is the path to folder that contains the videos (.mp4, .avi etc.) of the train set.
+- ```<annotations_path>``` is the path to folder that contains the annotation files (.txt) for the videos of the train set.
+- ```<save_dir>```: please, specify a path were the extracted face images will be stored, e.g. "./affwild2_frames".
+Upon completion, you should have obtained the following structure:
+```
+affwild2_frames ----- images ----- name_of_1st_video ----- ...
+                                           |        
+                                           |      
+                                           |
+                                   name_of_2nd_video ----- ...
+                                           .
+                                           .
+                                           .
+```
+with the folders named after the videos containing the corresponding images (we only keep the frames with detected faces and for which annotations exist).
+
+Then, you need to perform 3D reconstruction on these frames:
+```bash
+python preprocessing/reconstruct.py --celeb /path/to/saved/results
+```
+- ```<celeb>```: set this path to the previously specified ```<save_dir>```, e.g. "./affwild2_frames".
+This will create the DECA folder and will store the .pkl files with the 3D face parameters for all frames and videos:
+```
+affwild2_frames -------- images ----- name_of_1st_video ----- ...
+                           |                  |        
+                           |                  |      
+                           |                  |
+                           |          name_of_2nd_video ----- ...
+                           |                  .
+                           |                  .
+                           |                  .
+                           |
+                           |
+                         DECA -------- name_of_1st_video ----- ...
+                                              |        
+                                              |      
+                                              |
+                                       name_of_2nd_video ----- ...
+                                              .
+                                              .
+                                              .
+```
+
+Now, you can train the Manipulator on Aff-Wild2 by running:
+```bash
+python manipulator/train.py --database aff-wild2 --train_root <train_root> --annotations_path /path/to/annotations/of/the/train/set/ --checkpoints_dir <checkpoints_dir> --niter 20
+```
+- ```<train_root>``` is the path to the previously created DECA folder for the aff-wild2 database (e.g. "./affwild2_frames/DECA").
+- ```<annotations_path>``` is the path to folder that contains the aff-wild2 annotation files (.txt) for the videos of the train set.
+- ```<checkpoints_dir>``` is the new path where the checkpoints will be saved.
 
 ## Citation
 
