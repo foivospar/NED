@@ -240,7 +240,7 @@ Note: You can follow the optimization, by pointing Tensorboard to ```<checkpoint
 #### Training on Aff-Wild2
 Here we describe how to train the Manipulator on the Aff-Wild2 database, which was used as a pre-training step in the paper.
 
-First, see [here](https://ibug.doc.ic.ac.uk/resources/aff-wild2/) about how to acquire this database. We need only the expression set, i.e. the part with the categorical annotations (not Valence-Arousal or AUs). Once you gain access to the database, download and extract the videos and annotations for the expression set.
+First, see [here](https://ibug.doc.ic.ac.uk/resources/aff-wild2/) about how to acquire this database. We only need the expression set, i.e. the part with the categorical annotations (not Valence-Arousal or AUs). Once you gain access to the database, download and extract the videos and annotations for the expression set.
 
 Then, perform face detection in the videos of the train set (we don't use the val and test sets):
 ```bash
