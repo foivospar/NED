@@ -248,7 +248,7 @@ python preprocessing/detect_affwild2.py --videos_path /path/to/videos/of/the/tra
 ```
 - ```<videos_path>``` is the path to the folder that contains the videos (.mp4, .avi etc.) of the train set.
 - ```<annotations_path>``` is the path to the folder that contains the annotation files (.txt) for the videos of the train set.
-- ```<save_dir>```: please, specify a path were the extracted face images will be stored, e.g. "./affwild2_frames".
+- ```<save_dir>```: please, specify a path where the extracted face images will be stored, e.g. "./affwild2_frames".
 
 Upon completion, you should have obtained the following structure:
 ```
