@@ -14,7 +14,8 @@ https://foivospar.github.io/NED/<br>
 > **Abstract:** *In this paper, we introduce a novel deep learning method for photo-realistic manipulation of the emotional state of actors in ``in-the-wild'' videos. The proposed method is based on a parametric 3D face representation of the actor in the input scene that offers a reliable disentanglement of the facial identity from the head pose and facial expressions. It then uses a novel deep domain translation framework that alters the facial expressions in a consistent and plausible manner, taking into account their dynamics. Finally, the altered facial expressions are used to photo-realistically manipulate the facial region in the input scene based on an especially-designed neural face renderer. To the best of our knowledge, our method is the first to be capable of controlling the actor’s facial expressions by even using as a sole input the semantic labels of the manipulated emotions, while at the same time preserving the speech-related lip movements. We conduct extensive qualitative and quantitative evaluations and comparisons, which demonstrate the effectiveness of our approach and the especially promising results that we obtain. Our method opens a plethora of new possibilities for useful applications of neural rendering technologies, ranging from movie post-production and video games to photo-realistic affective avatars.*
 
 ## Updates
-**6/10/2022:** A few more additions on the training of the Manipulator (using Aff-Wild2), see [here](#training-on-aff-wild2).\\
+**6/10/2022:** A few more additions on the training of the Manipulator (using Aff-Wild2), see [here](#training-on-aff-wild2).
+
 **22/08/2022:** We have added code and [instructions](#optional-train-the-emotion-manipulator) for the training of the Emotion Manipulator.
 
 ## Getting Started
@@ -267,7 +268,7 @@ Then, you need to perform 3D reconstruction on these frames:
 python preprocessing/reconstruct.py --celeb /path/to/saved/results
 ```
 - ```<celeb>```: set this path to the previously specified ```<save_dir>```, e.g. "./affwild2_frames".
-- 
+
 This will create the DECA folder and will store the .pkl files with the 3D face parameters for all frames and videos:
 ```
 affwild2_frames -------- images ----- name_of_1st_video ----- ...
@@ -298,6 +299,19 @@ python manipulator/train.py --database aff-wild2 --train_root <train_root> --ann
 - ```<annotations_path>``` is the path to the folder that contains the aff-wild2 annotation files (.txt) for the videos of the train set.
 - ```<checkpoints_dir>``` is the new path where the checkpoints will be saved.
 
+
+## Acknowledgements
+We would like to thank the following great repositories that our code borrows from:
+- [Head2Head](https://github.com/michaildoukas/head2head)
+- [StarGAN v2](https://github.com/clovaai/stargan-v2)
+- [DECA](https://github.com/YadiraF/DECA)
+- [FSGAN](https://github.com/YuvalNirkin/fsgan)
+
+
+## Contact
+For any questions or suggestions, please contact [phoebus1998p@gmail.com](mailto:phoebus1998p@gmail.com).
+
+
 ## Citation
 
 
@@ -311,10 +325,3 @@ If you find this work useful for your research, please cite our paper.
          year={2022}
 }
 ```
-
-## Acknowledgements
-We would like to thank the following great repositories that our code borrows from:
-- [Head2Head](https://github.com/michaildoukas/head2head)
-- [StarGAN v2](https://github.com/clovaai/stargan-v2)
-- [DECA](https://github.com/YadiraF/DECA)
-- [FSGAN](https://github.com/YuvalNirkin/fsgan)
