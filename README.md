@@ -238,7 +238,7 @@ Checkpoints will be saved at the end of every epoch in ```<checkpoints_dir>```.
 Note: You can follow the optimization, by pointing Tensorboard to ```<checkpoints_dir>```.
 
 #### Training on Aff-Wild2
-Here we describe how to train the Manipulator on the Aff-Wild2 database, which was used as a pre-training step in the paper.
+Here, we describe how to train the Manipulator on the Aff-Wild2 database, which was used as a pre-training step in the paper.
 
 First, see [here](https://ibug.doc.ic.ac.uk/resources/aff-wild2/) about how to acquire this database. We only need the expression set, i.e. the part with the categorical annotations (not Valence-Arousal or AUs). Once you gain access to the database, download and extract the videos and annotations for the expression set.
 
